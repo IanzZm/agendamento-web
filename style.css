@@ -54,8 +54,15 @@
     background-color: #0056b3;
     color: white;
     text-align: center;
-    padding: 200px 20px;
+    height: 50vh;              
+    display: flex;             
+    flex-direction: column;
+    justify-content: center;   
+    align-items: center;       
+    padding: 10px 20px 0px;           
+    margin-top: 45px;          
   }
+  
   
   header h1 {
     font-size: 3rem;
@@ -66,17 +73,19 @@
 
   header p {
     margin-bottom: 45px;
+    font-size: 1.5rem;
   }
   
   header .btn {
     margin-top: 20px;
-    padding: 12px 20px;
+    padding: 12px 20px 15px;
     background: white;
     color: #0056b3;
     border: none;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.2rem;
   }
   
   .hero {
@@ -85,7 +94,7 @@
   }
   
   .hero img {
-    max-width: 20%;
+    max-width: 100%;
     height: auto;
     padding: 20px;
   }
