@@ -7,7 +7,7 @@ Este é um protótipo de sistema de agendamento online desenvolvido com HTML, CS
 - Tela inicial com acesso ao login
 - Login simulado (usuário: `admin`, senha: `1234`)
 - Página de cadastro (simulada, sem salvar dados)
-- Formulário de agendamento com campo de convênio inteligente
+- Formulário de agendamento 
 
 ## Como executar
 
