@@ -165,3 +165,21 @@
     white-space: nowrap;
   }
   
+  .tabela-reservas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .tabela-reservas th,
+  .tabela-reservas td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .tabela-reservas thead {
+    background-color: #0056b3;
+    color: white;
+  }
+  
