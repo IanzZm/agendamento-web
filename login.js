@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const usuario = document.getElementById('usuario').value;
       const senha = document.getElementById('senha').value;
   
-      if (usuario === 'admin' && senha === '1234') {
+      if (usuario === 'usuario' && senha === 'senha') {
         window.location.href = 'agendar.html';
       } else {
         erro.style.display = 'block';
