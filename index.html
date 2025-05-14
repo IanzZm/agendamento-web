@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Atende+</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">Atende+</div>
-      <ul class="nav-links">
-        <li><a href="#medicos">Médicos</a></li>
-        <li><a href="#especialidades">Especialidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="login-admin.html">Área do Consultório</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atende+</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">Atende+</div>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <a href="#medicos">Médicos</a>
+            <ul class="dropdown-menu" id="menuMedicos"></ul>
+          </li>
+
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="login-admin.html">Área do Consultório</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Atende+</h1>
+      <p>Agende seu horário de forma rápida e segura.</p>
+      <a href="login.html" class="btn">Agendar agora</a>
+    </header>
+
+    <main class="hero">
+      <img
+        src="img/agende_sua_consulta_v1.png"
+        alt="Ilustração de agendamento"
+      />
+    </main>
+
+    <section id="medicos" class="secao-info">
+      <h2>Nossos Médicos</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Dr. João Silva</h3>
+          <p>Cardiologista</p>
+        </div>
+        <div class="card">
+          <h3>Dra. Ana Costa</h3>
+          <p>Dermatologista</p>
+        </div>
+        <div class="card">
+          <h3>Dr. Pedro Lima</h3>
+          <p>Ortopedista</p>
+        </div>
+      </div>
+
+      <h2 id="especialidades" style="margin-top: 50px">Especialidades</h2>
+      <ul class="lista-especialidades">
+        <li>Cardiologia</li>
+        <li>Dermatologia</li>
+        <li>Ortopedia</li>
+        <li>Pediatria</li>
+        <li>Clínico Geral</li>
       </ul>
-    </div>
-  </nav>
-  
-  <header>
-    <h1>Atende+</h1>
-    <p>Agende seu horário de forma rápida e segura.</p>
-    <a href="login.html" class="btn">Agendar agora</a>
-  </header>
+    </section>
 
-  <main class="hero">
-    <img src="img/agende_sua_consulta_v1.png" alt="Ilustração de agendamento" />
-  </main>
-  
-  <section id="medicos" class="secao-info">
-    <h2>Nossos Médicos</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Dr. João Silva</h3>
-        <p>Cardiologista</p>
-      </div>
-      <div class="card">
-        <h3>Dra. Ana Costa</h3>
-        <p>Dermatologista</p>
-      </div>
-      <div class="card">
-        <h3>Dr. Pedro Lima</h3>
-        <p>Ortopedista</p>
-      </div>
-    </div>
+    <footer id="contato">
+      <p>&copy; 2025 Atende+. Todos os direitos reservados.</p>
+    </footer>
 
-    <h2 id="especialidades" style="margin-top: 50px;">Especialidades</h2>
-    <ul class="lista-especialidades">
-      <li>Cardiologia</li>
-      <li>Dermatologia</li>
-      <li>Ortopedia</li>
-      <li>Pediatria</li>
-      <li>Clínico Geral</li>
-    </ul>
-  </section>
-
-  <footer id="contato">
-    <p>&copy; 2025 Atende+. Todos os direitos reservados.</p>
-  </footer>
-</body>
+  <script src="index.js"></script>
+  </body>
 </html>
