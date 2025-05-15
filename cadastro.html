@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Criar Conta - Agende Fácil</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h2>Criar Conta</h2>
-    <form id="cadastroForm">
-      <label for="nome">Nome completo:</label>
-      <input type="text" id="nome" required placeholder="Seu nome completo" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar Conta - Agende Fácil</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Criar Conta</h2>
+      <form id="cadastroForm">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" required placeholder="Seu nome completo" />
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" required placeholder="seu@email.com" />
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" required placeholder="seu@email.com" />
 
-      <label for="novoUsuario">Usuário:</label>
-      <input type="text" id="novoUsuario" required placeholder="Escolha um nome de usuário" />
+        <label for="novoUsuario">Usuário:</label>
+        <input
+          type="text"
+          id="novoUsuario"
+          required
+          placeholder="Escolha um nome de usuário"
+        />
 
-      <label for="novaSenha">Senha:</label>
-      <input type="password" id="novaSenha" required placeholder="Crie uma senha" />
+        <label for="novaSenha">Senha:</label>
+        <input
+          type="password"
+          id="novaSenha"
+          required
+          placeholder="Crie uma senha"
+        />
 
-      <button type="submit">Cadastrar</button>
-    </form>
-  </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
 
-  <script src="cadastro.js"></script>
-</body>
+    <script src="cadastro.js"></script>
+  </body>
 </html>

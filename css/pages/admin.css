@@ -1,0 +1,35 @@
+/* Painel do consultório - admin.html */
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #0056b3;
+  margin-bottom: 30px;
+}
+
+/* Tabela de reservas */
+.tabela-reservas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.tabela-reservas th,
+.tabela-reservas td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabela-reservas thead {
+  background-color: #0056b3;
+  color: white;
+}
