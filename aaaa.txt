@@ -1,9 +1,0 @@
-/css/
-├── base.css            → reset, html, body, fontes
-├── layout.css          → navbar, header, footer, containers
-├── components.css      → cards, botões, formulários
-├── pages/
-│   ├── index.css       → estilos específicos da página inicial
-│   ├── agendar.css     → formulário de agendamento
-│   ├── admin.css       → tabela de reservas
-                       
