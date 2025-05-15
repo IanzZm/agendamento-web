@@ -86,6 +86,55 @@ body {
   display: block;
 }
 
+/* Oculta o menu padrão em telas pequenas */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Exibir o botão e ajustar menu em telas menores */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #003d80;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: #004a99;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none; /* desativa hover no mobile */
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+}
+
 header {
   background-color: #0056b3;
   color: white;
