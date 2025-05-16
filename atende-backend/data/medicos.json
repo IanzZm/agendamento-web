@@ -1,0 +1,17 @@
+[
+  {
+    "id": "joao-silva",
+    "nome": "Dr. João Silva",
+    "especialidade": "Cardiologista"
+  },
+  {
+    "id": "ana-costa",
+    "nome": "Dra. Ana Costa",
+    "especialidade": "Dermatologista"
+  },
+  {
+    "id": "pedro-lima",
+    "nome": "Dr. Pedro Lima",
+    "especialidade": "Ortopedista"
+  }
+]
