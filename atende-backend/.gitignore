@@ -1,1 +1,37 @@
+# Node modules (dependências)
 node_modules/
+
+# Logs e arquivos temporários
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Dados gerados em tempo de execução
+data/agendamentos.json
+
+# Diretórios do sistema/macOS
+.DS_Store
+Thumbs.db
+
+# Arquivos de lock do editor/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos de cache
+.cache/
+dist/
+build/
+*.log
+
+# Testes temporários
+*.test.*
+__tests__/
+coverage/
