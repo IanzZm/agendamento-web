@@ -28,26 +28,25 @@ Sistema de agendamento online para clínicas e consultórios. Desenvolvido com H
 ```bash
 npm install
 node server.js
+```
+
+# 🔐 Acessos Simulados
+## 👩‍⚕️ Acesso do consultório
+### Usuário: admin
+
+### Senha: consultorio123
+
+## 🩺 Acesso administrativo (área do médico)
+### Usuário: admin
+
+### Senha: 1234
 
 
+# 📌 Tecnologias Usadas
+## HTML5
 
-🔐 Acessos Simulados
-👩‍⚕️ Acesso do consultório
-Usuário: admin
+## CSS3 (com organização modular)
 
-Senha: consultorio123
+## JavaScript (puro, sem frameworks)
 
-🩺 Acesso administrativo (área do médico)
-Usuário: admin
-
-Senha: 1234
-
-
-📌 Tecnologias Usadas
-HTML5
-
-CSS3 (com organização modular)
-
-JavaScript (puro, sem frameworks)
-
-Node.js (para back-end simples com arquivos .json)
+## Node.js (para back-end simples com arquivos .json)
