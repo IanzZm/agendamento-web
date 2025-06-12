@@ -1,4 +1,13 @@
 /* Estilo da página de agendamento */
+.navbar {
+    position: static;
+}
+
+.container { 
+    margin-top: 45px;
+    
+}
+
 
 .container {
   max-width: 500px;

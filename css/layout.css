@@ -21,6 +21,17 @@
   font-weight: bold;
 }
 
+.logo a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.logo a:hover {
+  background-color: #06387a;
+}
+
 .nav-links {
   list-style: none;
   display: flex;

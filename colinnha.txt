@@ -1,6 +1,0 @@
-atende-backend/
-├── server.js
-├── data/
-│   ├── medicos.json
-│   └── agendamentos.json
-├── package.json

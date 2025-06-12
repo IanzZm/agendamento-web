@@ -1,4 +1,13 @@
 /* Painel do consultório - admin.html */
+.navbar {
+    position: static;
+}
+
+.container { 
+    margin-top: 45px;
+    
+}
+
 
 .container {
   max-width: 900px;

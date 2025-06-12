@@ -7,8 +7,41 @@
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/pages/cadastro.css">
   </head>
   <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">Atende+</a>
+        </div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav-links" id="navLinks">
+          <li class="dropdown">
+            <a href="#medicos">Médicos</a>
+            <ul class="dropdown-menu" id="menuMedicos">
+              <li>
+                <a href="perfil-medico.html?medico=joao-silva"
+                  >Dr. João Silva</a
+                >
+              </li>
+              <li>
+                <a href="perfil-medico.html?medico=ana-costa">Dra. Ana Costa</a>
+              </li>
+              <li>
+                <a href="perfil-medico.html?medico=pedro-lima"
+                  >Dr. Pedro Lima</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="login-admin.html">Área do Consultório</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
       <h2>Criar Conta</h2>
       <form id="cadastroForm">
