@@ -31,22 +31,22 @@ node server.js
 ```
 
 # 🔐 Acessos Simulados
-## 👩‍⚕️ Acesso do consultório
-### Usuário: admin
+ ## 👩‍⚕️ Acesso do consultório
+  ### Usuário: admin
 
-### Senha: consultorio123
+  ### Senha: consultorio123
 
-## 🩺 Acesso administrativo (área do médico)
-### Usuário: admin
+ ## 🩺 Acesso administrativo (área do médico)
+  ### Usuário: admin
 
-### Senha: 1234
+  ### Senha: 1234
 
 
 # 📌 Tecnologias Usadas
-## HTML5
+ ## HTML5
 
-## CSS3 (com organização modular)
+ ## CSS3 (com organização modular)
 
-## JavaScript (puro, sem frameworks)
+ ## JavaScript (puro, sem frameworks)
 
-## Node.js (para back-end simples com arquivos .json)
+ ## Node.js (para back-end simples com arquivos .json)
