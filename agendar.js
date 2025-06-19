@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
       email: document.getElementById('email').value,
       convenio: inputConvenio.disabled ? "Não possui" : inputConvenio.value,
       data: document.getElementById('data').value,
-      horario: document.getElementById('horario').value
+      horario: document.getElementById('horario').value,
+      medico: document.getElementById('medico').value
     };
 
     fetch("http://localhost:3000/agendamentos", {

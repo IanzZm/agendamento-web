@@ -37,9 +37,9 @@ Usuário: admin
 Senha: consultorio123
 
  ## 🩺 Acesso administrativo (área do médico)
-Usuário: admin
+Usuário: usuario
 
-Senha: 1234
+Senha: senha
 
 
 # 📌 Tecnologias Usadas
