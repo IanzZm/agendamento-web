@@ -108,6 +108,8 @@ input:disabled {
   font-weight: 500;
 }
 
+
+
 /* Tabela de reservas (admin) */
 .tabela-reservas {
   width: 100%;
@@ -145,6 +147,7 @@ input:disabled {
   list-style: none;
   padding: 0;
   margin: 0;
+  white-space: nowrap;
 }
 
 .dropdown-menu li {
