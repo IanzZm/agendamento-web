@@ -77,15 +77,20 @@
           <label for="semConvenio">Não possuo convênio</label>
         </div>
 
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data" required />
+        
 
         <label for="medico">Selecione o médico:</label>
         <select id="medico" name="medico" required>
           <option value="">-- Escolha um médico --</option>
-          <option value="Dr. João Silva">Dr. João Silva</option>
-          <option value="Dra. Ana Costa">Dra. Ana Costa</option>
-          <option value="Dr. Pedro Lima">Dr. Pedro Lima</option>
+          <option value="Dra. Ana Costa" data-id="ana-costa">
+            Dra. Ana Costa
+          </option>
+          <option value="Dr. João Silva" data-id="joao-silva">
+            Dr. João Silva
+          </option>
+          <option value="Dr. Pedro Lima" data-id="pedro-lima">
+            Dr. Pedro Lima
+          </option>
         </select>
 
         <label for="data">Data:</label>

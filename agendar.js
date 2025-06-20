@@ -11,13 +11,16 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    const selectMedico = document.getElementById("medico");
+
     const dados = {
       nome: document.getElementById('nome').value,
       email: document.getElementById('email').value,
       convenio: inputConvenio.disabled ? "Não possui" : inputConvenio.value,
       data: document.getElementById('data').value,
       horario: document.getElementById('horario').value,
-      medico: document.getElementById('medico').value
+      medico: document.getElementById('medico').value,
+      idMedico: selectMedico.selectedOptions[0].dataset.id
     };
 
     fetch("http://localhost:3000/agendamentos", {
