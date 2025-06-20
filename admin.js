@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const linha = document.createElement('tr');
         linha.innerHTML = `
           <td>${item.nome}</td>
+          <td>${item.medico || "—"}</td>
           <td>${item.data}</td>
           <td>${item.horario}</td>
           <td>${item.convenio}</td>
