@@ -79,5 +79,14 @@
     "horario": "08:00",
     "medico": "Dra. Ana Costa",
     "idMedico": "ana-costa"
+  },
+  {
+    "nome": "testefinal",
+    "email": "testefinal@teste",
+    "convenio": "Finalidade",
+    "data": "2025-07-11",
+    "horario": "11:00",
+    "medico": "Dr. Pedro Lima",
+    "idMedico": "pedro-lima"
   }
 ]

@@ -7,12 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
       return res.json();
     })
     .then(dados => {
+      // 🔽 Ordena os dados por data e horário (mais antigos primeiro)
+      dados.sort((a, b) => {
+        const dataA = new Date(`${a.data}T${a.horario}`);
+        const dataB = new Date(`${b.data}T${b.horario}`);
+        return dataA - dataB;
+      });
       const corpoTabela = document.querySelector('.tabela-reservas tbody');
       corpoTabela.innerHTML = ''; // limpa qualquer conteúdo anterior
 
       if (dados.length === 0) {
         const linha = document.createElement('tr');
-        linha.innerHTML = `<td colspan="4">Nenhum agendamento encontrado.</td>`;
+        linha.innerHTML = `<td colspan="5">Nenhum agendamento encontrado.</td>`;
         corpoTabela.appendChild(linha);
         return;
       }
