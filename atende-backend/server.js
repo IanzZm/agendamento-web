@@ -29,7 +29,7 @@ app.get('/agendamentos', (req, res) => {
   });
 });
 
-// Rota: salvar novo agendamento
+// Rota: salvar novo agendamento com verificação de conflito
 app.post('/agendamentos', (req, res) => {
   const novoAgendamento = req.body;
 
@@ -37,6 +37,19 @@ app.post('/agendamentos', (req, res) => {
     if (err) return res.status(500).send('Erro ao ler agendamentos.');
 
     const agendamentos = JSON.parse(data);
+
+    // Verifica se já existe agendamento com mesmo médico, data e horário
+    const conflito = agendamentos.find(a =>
+      a.medico === novoAgendamento.medico &&
+      a.data === novoAgendamento.data &&
+      a.horario === novoAgendamento.horario
+    );
+
+    if (conflito) {
+      return res.status(409).json({ mensagem: 'Este horário já está reservado para o médico selecionado.' });
+    }
+
+    // Se não houver conflito, salva
     agendamentos.push(novoAgendamento);
 
     fs.writeFile(caminhoAgendamentos, JSON.stringify(agendamentos, null, 2), (err) => {
@@ -45,6 +58,7 @@ app.post('/agendamentos', (req, res) => {
     });
   });
 });
+
 
 // Inicia servidor
 app.listen(PORT, () => {

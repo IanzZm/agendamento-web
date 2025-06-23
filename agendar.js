@@ -42,4 +42,45 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error(err);
     });
   });
+
+    // Lógica para atualizar horários disponíveis
+  const horariosPadrao = ["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00"];
+
+  document.getElementById('medico').addEventListener('change', atualizarHorariosDisponiveis);
+  document.getElementById('data').addEventListener('change', atualizarHorariosDisponiveis);
+
+  function atualizarHorariosDisponiveis() {
+    const medico = document.getElementById('medico').value;
+    const data = document.getElementById('data').value;
+    const selectHorario = document.getElementById('horario');
+
+    if (!medico || !data) return;
+
+    fetch('http://localhost:3000/agendamentos')
+      .then(res => res.json())
+      .then(agendamentos => {
+        const horariosIndisponiveis = agendamentos
+          .filter(a => a.medico === medico && a.data === data)
+          .map(a => a.horario);
+
+        selectHorario.innerHTML = "";
+
+        horariosPadrao.forEach(horario => {
+          if (!horariosIndisponiveis.includes(horario)) {
+            const option = document.createElement('option');
+            option.value = horario;
+            option.textContent = horario;
+            selectHorario.appendChild(option);
+          }
+        });
+
+        if (selectHorario.options.length === 0) {
+          const option = document.createElement('option');
+          option.textContent = "Nenhum horário disponível";
+          option.disabled = true;
+          selectHorario.appendChild(option);
+        }
+      });
+  }
+
 });
