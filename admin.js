@@ -1,3 +1,8 @@
+function formatarData(isoString) {
+  const [ano, mes, dia] = isoString.split("-");
+  return `${dia}/${mes}/${ano}`;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   fetch("http://localhost:3000/agendamentos")
     .then(res => {
@@ -29,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         linha.innerHTML = `
           <td>${item.nome}</td>
           <td>${item.medico || "—"}</td>
-          <td>${item.data}</td>
+          <td>${formatarData(item.data)}</td>
           <td>${item.horario}</td>
           <td>${item.convenio}</td>
           <td>
