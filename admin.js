@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  fetch("http://localhost:3000/agendamentos") // ou use 127.0.0.1 se preferir
+  fetch("http://localhost:3000/agendamentos")
     .then(res => {
       if (!res.ok) {
         throw new Error("Erro ao buscar agendamentos");
@@ -13,12 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const dataB = new Date(`${b.data}T${b.horario}`);
         return dataA - dataB;
       });
+
       const corpoTabela = document.querySelector('.tabela-reservas tbody');
       corpoTabela.innerHTML = ''; // limpa qualquer conteúdo anterior
 
       if (dados.length === 0) {
         const linha = document.createElement('tr');
-        linha.innerHTML = `<td colspan="5">Nenhum agendamento encontrado.</td>`;
+        linha.innerHTML = `<td colspan="6">Nenhum agendamento encontrado.</td>`;
         corpoTabela.appendChild(linha);
         return;
       }
@@ -31,8 +32,44 @@ document.addEventListener('DOMContentLoaded', function () {
           <td>${item.data}</td>
           <td>${item.horario}</td>
           <td>${item.convenio}</td>
+          <td>
+            <button class="btn-excluir" 
+                    data-medico="${item.medico}" 
+                    data-data="${item.data}" 
+                    data-horario="${item.horario}">
+              Excluir
+            </button>
+          </td>
         `;
         corpoTabela.appendChild(linha);
+      });
+
+      // 🔁 Event listener para exclusão
+      document.querySelectorAll('.btn-excluir').forEach(botao => {
+        botao.addEventListener('click', () => {
+          const medico = botao.dataset.medico;
+          const data = botao.dataset.data;
+          const horario = botao.dataset.horario;
+
+          if (!confirm(`Deseja excluir o agendamento de ${medico} em ${data} às ${horario}?`)) return;
+
+          fetch("http://localhost:3000/agendamentos", {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ medico, data, horario })
+          })
+          .then(res => res.json())
+          .then(res => {
+            alert(res.mensagem);
+            location.reload(); // recarrega a tabela após exclusão
+          })
+          .catch(err => {
+            alert("Erro ao excluir agendamento.");
+            console.error(err);
+          });
+        });
       });
     })
     .catch(err => {

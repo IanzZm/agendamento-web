@@ -59,6 +59,32 @@ app.post('/agendamentos', (req, res) => {
   });
 });
 
+// Rota: excluir agendamento (baseado em médico, data e horário)
+app.delete('/agendamentos', (req, res) => {
+  const { medico, data, horario } = req.body;
+
+  fs.readFile(caminhoAgendamentos, 'utf8', (err, dataJson) => {
+    if (err) return res.status(500).send('Erro ao ler agendamentos.');
+
+    let agendamentos = JSON.parse(dataJson);
+    const antes = agendamentos.length;
+
+    // Filtra fora o agendamento a ser removido
+    agendamentos = agendamentos.filter(a =>
+      !(a.medico === medico && a.data === data && a.horario === horario)
+    );
+
+    if (agendamentos.length === antes) {
+      return res.status(404).json({ mensagem: 'Agendamento não encontrado.' });
+    }
+
+    fs.writeFile(caminhoAgendamentos, JSON.stringify(agendamentos, null, 2), (err) => {
+      if (err) return res.status(500).send('Erro ao salvar agendamentos.');
+      res.status(200).json({ mensagem: 'Agendamento excluído com sucesso.' });
+    });
+  });
+});
+
 
 // Inicia servidor
 app.listen(PORT, () => {

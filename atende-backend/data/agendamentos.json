@@ -1,23 +1,5 @@
 [
   {
-    "nome": "Ian",
-    "email": "ian@ian.com",
-    "convenio": "Unimed",
-    "data": "2025-06-24",
-    "horario": "08:00",
-    "medico": "Dra. Ana Costa",
-    "idMedico": "ana-costa"
-  },
-  {
-    "nome": "lucas",
-    "email": "lucas@lucas.com",
-    "convenio": "Hapvida",
-    "data": "2025-06-24",
-    "horario": "09:00",
-    "medico": "Dra. Ana Costa",
-    "idMedico": "ana-costa"
-  },
-  {
     "nome": "a",
     "email": "a@a.com",
     "convenio": "Não possui",
