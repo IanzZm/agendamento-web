@@ -31,15 +31,15 @@ node server.js
 ```
 
 # 🔐 Acessos Simulados
- ## 👩‍⚕️ Acesso do consultório
+ ## 👩‍⚕️ Acesso Agendar
+Usuário: usuario    
+
+Senha: senha
+
+ ## 🩺 Acesso administrativo (área do médico)
 Usuário: admin
 
 Senha: consultorio123
-
- ## 🩺 Acesso administrativo (área do médico)
-Usuário: usuario
-
-Senha: senha
 
 
 # 📌 Tecnologias Usadas
@@ -49,4 +49,4 @@ Senha: senha
 
  ## JavaScript (puro, sem frameworks)
 
- ## Node.js (para back-end simples com arquivos .json)
+ ## Node.js 
