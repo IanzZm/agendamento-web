@@ -13,6 +13,7 @@ app.use(express.json());
 // Caminhos dos "bancos" simulados
 const caminhoMedicos = path.join(__dirname, 'data', 'medicos.json');
 const caminhoAgendamentos = path.join(__dirname, 'data', 'agendamentos.json');
+const caminhoUsuarios = path.join(__dirname, 'data', 'usuarios.json');
 
 // Rota: listar médicos
 app.get('/medicos', (req, res) => {
@@ -21,6 +22,7 @@ app.get('/medicos', (req, res) => {
     res.json(JSON.parse(data));
   });
 });
+
 // Rota: listar agendamentos
 app.get('/agendamentos', (req, res) => {
   fs.readFile(caminhoAgendamentos, 'utf8', (err, data) => {
@@ -35,10 +37,8 @@ app.post('/agendamentos', (req, res) => {
 
   fs.readFile(caminhoAgendamentos, 'utf8', (err, data) => {
     if (err) return res.status(500).send('Erro ao ler agendamentos.');
-
     const agendamentos = JSON.parse(data);
 
-    // Verifica se já existe agendamento com mesmo médico, data e horário
     const conflito = agendamentos.find(a =>
       a.medico === novoAgendamento.medico &&
       a.data === novoAgendamento.data &&
@@ -49,9 +49,7 @@ app.post('/agendamentos', (req, res) => {
       return res.status(409).json({ mensagem: 'Este horário já está reservado para o médico selecionado.' });
     }
 
-    // Se não houver conflito, salva
     agendamentos.push(novoAgendamento);
-
     fs.writeFile(caminhoAgendamentos, JSON.stringify(agendamentos, null, 2), (err) => {
       if (err) return res.status(500).send('Erro ao salvar agendamento.');
       res.status(201).json({ mensagem: 'Agendamento salvo com sucesso!' });
@@ -69,7 +67,6 @@ app.delete('/agendamentos', (req, res) => {
     let agendamentos = JSON.parse(dataJson);
     const antes = agendamentos.length;
 
-    // Filtra fora o agendamento a ser removido
     agendamentos = agendamentos.filter(a =>
       !(a.medico === medico && a.data === data && a.horario === horario)
     );
@@ -85,6 +82,42 @@ app.delete('/agendamentos', (req, res) => {
   });
 });
 
+// Rota: cadastrar novo usuário
+app.post('/usuarios', (req, res) => {
+  const novoUsuario = req.body;
+
+  fs.readFile(caminhoUsuarios, 'utf8', (err, data) => {
+    const usuarios = data ? JSON.parse(data) : [];
+
+    const jaExiste = usuarios.find(u => u.email === novoUsuario.email);
+    if (jaExiste) {
+      return res.status(409).json({ mensagem: 'E-mail já cadastrado.' });
+    }
+
+    usuarios.push(novoUsuario);
+    fs.writeFile(caminhoUsuarios, JSON.stringify(usuarios, null, 2), (err) => {
+      if (err) return res.status(500).send('Erro ao salvar usuário.');
+      res.status(201).json({ mensagem: 'Usuário cadastrado com sucesso.' });
+    });
+  });
+});
+
+// Rota: login de usuário
+app.post('/login', (req, res) => {
+  const { email, senha } = req.body;
+
+  fs.readFile(caminhoUsuarios, 'utf8', (err, data) => {
+    const usuarios = data ? JSON.parse(data) : [];
+
+    const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+
+    if (!usuario) {
+      return res.status(401).json({ mensagem: 'Credenciais inválidas.' });
+    }
+
+    res.status(200).json({ mensagem: 'Login bem-sucedido.', usuario });
+  });
+});
 
 // Inicia servidor
 app.listen(PORT, () => {
